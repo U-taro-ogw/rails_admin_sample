@@ -1,0 +1,38 @@
+version: '3.7'
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+      - "3035:3035"
+    environment:
+      RAILS_ENV: development
+      NODE_ENV: development
+      DB_HOST: db
+      WEBPACKER_DEV_SERVER_HOST: 0.0.0.0
+    depends_on:
+      - db
+    volumes:
+      - .:/work:cached
+      - bundle:/usr/local/bundle:cached
+      - /work/node_modules
+      - /work/log
+      - /work/tmp
+    tty: true
+    stdin_open: true
+
+  db:
+    image: mysql:5.7
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
+      MYSQL_ROOT_PASSWORD: ''
+    volumes:
+      - mysql_data:/var/lib/mysql:cached
+
+volumes:
+  mysql_data:
+  bundle:
