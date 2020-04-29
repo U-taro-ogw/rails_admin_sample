@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
 #
@@ -15,10 +17,16 @@
   )
 end
 
-2.times do |i|
-  TennisGame.create!(
-    game_date: Time.zone.now + i.days,
-    first_player_identifier: TennisPlayer.find(1).player_identifier,
-    second_player_identifier: TennisPlayer.find(2).player_identifier,
-  )
-end
+TennisGame.create!(
+  game_date: Time.zone.now - 1.days,
+  first_player_identifier: TennisPlayer.find(1).player_identifier,
+  second_player_identifier: TennisPlayer.find(2).player_identifier,
+  result: 0,
+)
+
+TennisGame.create!(
+  game_date: Time.zone.now - 2.days,
+  first_player_identifier: TennisPlayer.find(3).player_identifier,
+  second_player_identifier: TennisPlayer.find(4).player_identifier,
+  result: 1,
+)
