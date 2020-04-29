@@ -16,6 +16,7 @@ ActiveRecord::Schema.define(version: 2020_04_26_160225) do
     t.timestamp "game_date"
     t.string "first_player_identifier", null: false
     t.string "second_player_identifier", null: false
+    t.integer "result", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
