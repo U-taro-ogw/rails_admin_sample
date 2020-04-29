@@ -17,16 +17,34 @@
   )
 end
 
-TennisGame.create!(
+g1 = TennisGame.create!(
   game_date: Time.zone.now - 1.days,
   first_player_identifier: TennisPlayer.find(1).player_identifier,
   second_player_identifier: TennisPlayer.find(2).player_identifier,
   result: 0,
 )
 
-TennisGame.create!(
+TennisGameScore.create!(
+  tennis_game: g1,
+  first_set_first_player: 4,
+  first_set_second_player: 6,
+  second_set_first_player: 7,
+  second_set_second_player: 5,
+  third_set_first_player: 4,
+  third_set_second_player: 6,
+)
+
+g2 = TennisGame.create!(
   game_date: Time.zone.now - 2.days,
   first_player_identifier: TennisPlayer.find(3).player_identifier,
   second_player_identifier: TennisPlayer.find(4).player_identifier,
   result: 1,
+)
+
+TennisGameScore.create!(
+  tennis_game: g2,
+  first_set_first_player: 6,
+  first_set_second_player: 0,
+  second_set_first_player: 7,
+  second_set_second_player: 5
 )
