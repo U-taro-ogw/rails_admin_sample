@@ -13,8 +13,8 @@ RSpec.describe Admin::TennisGameForm do
     let(:init_attributes) do
       {
           game_date: now,
-          first_player: player_1.player_identifier,
-          second_player: player_2.player_identifier,
+          first_player_identifier: player_1.player_identifier,
+          second_player_identifier: player_2.player_identifier,
           result: result,
           first_set_first_player: 1,
           first_set_second_player: 2,
@@ -30,8 +30,8 @@ RSpec.describe Admin::TennisGameForm do
     let(:init_attributes) do
       {
           game_date: now,
-          first_player: player_1.player_identifier,
-          second_player: player_2.player_identifier,
+          first_player_identifier: player_1.player_identifier,
+          second_player_identifier: player_2.player_identifier,
           result: result,
           first_set_first_player: 6,
           first_set_second_player: 5,
@@ -78,8 +78,8 @@ RSpec.describe Admin::TennisGameForm do
 
         tennis_game = TennisGame.last
         expect(tennis_game.game_date).to eq init_attributes[:game_date]
-        expect(tennis_game.first_player_identifier).to eq init_attributes[:first_player]
-        expect(tennis_game.second_player_identifier).to eq init_attributes[:second_player]
+        expect(tennis_game.first_player_identifier).to eq init_attributes[:first_player_identifier]
+        expect(tennis_game.second_player_identifier).to eq init_attributes[:second_player_identifier]
         # enumの整数値で比較
         expect(tennis_game.result_before_type_cast).to eq init_attributes[:result]
 
@@ -119,8 +119,8 @@ RSpec.describe Admin::TennisGameForm do
         after_tennis_game = TennisGame.find(tennis_game.id)
         expect(after_tennis_game.id).to eq tennis_game.id
         expect(after_tennis_game.game_date).to eq init_attributes[:game_date]
-        expect(after_tennis_game.first_player_identifier).to eq init_attributes[:first_player]
-        expect(after_tennis_game.second_player_identifier).to eq init_attributes[:second_player]
+        expect(after_tennis_game.first_player_identifier).to eq init_attributes[:first_player_identifier]
+        expect(after_tennis_game.second_player_identifier).to eq init_attributes[:second_player_identifier]
 
         after_tennis_game_score = after_tennis_game.tennis_game_score
         expect(after_tennis_game_score.first_set_first_player).to eq init_attributes[:first_set_first_player]

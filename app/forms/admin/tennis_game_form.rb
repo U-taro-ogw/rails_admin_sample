@@ -3,8 +3,8 @@ module Admin
     include ActiveModel::Model
 
     attr_accessor :game_date,
-                  :first_player,
-                  :second_player,
+                  :first_player_identifier,
+                  :second_player_identifier,
                   :result,
                   :first_set_first_player,
                   :first_set_second_player,
@@ -14,8 +14,8 @@ module Admin
                   :third_set_second_player
 
     validates :game_date, presence: true
-    validates :first_player, presence: true
-    validates :second_player, presence: true
+    validates :first_player_identifier, presence: true
+    validates :second_player_identifier, presence: true
     validates :result, presence: true
     validates :first_set_first_player, numericality: { only_integer: true }, allow_blank: true
     validates :first_set_second_player, numericality: { only_integer: true }, allow_blank: true
@@ -45,8 +45,8 @@ module Admin
       def to_tennis_game_attribute
         {
             game_date: game_date,
-            first_player_identifier: first_player,
-            second_player_identifier: second_player,
+            first_player_identifier: first_player_identifier,
+            second_player_identifier: second_player_identifier,
             result: result,
         }
       end
