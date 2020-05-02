@@ -1,0 +1,21 @@
+%h1 Tennis#index
+%p Find me in app/views/tennis_games/index.html.haml
+
+= link_to '新規作成', new_admin_tennis_game_path
+
+%table{ :border => "1" }
+  %thead
+    %tr
+      %td 試合日時
+      %td 選手名1
+      %td 選手名2
+      %td 結果
+      %td
+  %tbody
+    - @tennis_games.each do |tennis_game|
+      %tr
+        %td= tennis_game.game_date
+        %td= tennis_game.first_player.name
+        %td= tennis_game.second_player.name
+        %td= tennis_game.result
+        %td= link_to '編集', edit_admin_tennis_game_path(tennis_game.id)
