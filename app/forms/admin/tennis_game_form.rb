@@ -2,7 +2,8 @@ module Admin
   class TennisGameForm
     include ActiveModel::Model
 
-    attr_accessor :game_date,
+    attr_accessor :id,
+                  :game_date,
                   :first_player_identifier,
                   :second_player_identifier,
                   :result,

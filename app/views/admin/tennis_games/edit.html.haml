@@ -1,0 +1,6 @@
+%h1 Tennis#edit
+%p Find me in app/views/tennis_games/edit.html.haml
+
+= render partial: 'form', locals: { tennis_game_form: @tennis_game_form, url: admin_tennis_game_path(@tennis_game_form.id), method: :put }
+
+= link_to '一覧', admin_tennis_games_path

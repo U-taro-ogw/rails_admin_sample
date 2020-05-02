@@ -5,4 +5,8 @@ class TennisGame < ApplicationRecord
   belongs_to :second_player, primary_key: 'player_identifier', foreign_key: 'second_player_identifier', class_name: 'TennisPlayer', inverse_of: :second_games
 
   has_one :tennis_game_score
+
+  def to_attributes
+    attributes.delete_if { |k, _| %w[created_at updated_at].include?(k) }
+  end
 end
