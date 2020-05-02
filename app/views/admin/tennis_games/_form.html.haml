@@ -1,0 +1,33 @@
+= form_with model: tennis_game_form, url: url, method: method, local: true do |f|
+  - unless tennis_game_form.errors.empty?
+    = render 'layout/error_messages', errors: tennis_game_form.errors
+
+  .field
+    = f.label :game_date
+    = f.text_field :game_date
+
+  .field
+    = f.label :result
+    = f.text_field :result
+
+  %table{ border: '1' }
+    %thead
+      %tr
+        %th= '選手'
+        %th= '1'
+        %th= '2'
+        %th= '3'
+    %tbody
+      %tr
+        %td= f.text_field :first_player
+        %td= f.text_field :first_set_first_player
+        %td= f.text_field :second_set_first_player
+        %td= f.text_field :third_set_first_player
+      %tr
+        %td= f.text_field :second_player
+        %td= f.text_field :first_set_second_player
+        %td= f.text_field :second_set_second_player
+        %td= f.text_field :third_set_second_player
+
+  .actions
+    = f.submit :save

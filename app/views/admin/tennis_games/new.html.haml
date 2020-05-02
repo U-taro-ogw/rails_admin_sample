@@ -1,1 +1,6 @@
-hoge
+%h1 Tennis#new
+%p Find me in app/views/tennis_games/new.html.haml
+
+= render partial: 'form', locals: { tennis_game_form: @tennis_game_form, url: admin_tennis_games_path, method: :post }
+
+= link_to '一覧', admin_tennis_games_path

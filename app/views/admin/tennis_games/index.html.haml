@@ -14,6 +14,6 @@
     - @tennis_games.each do |tennis_game|
       %tr
         %td= tennis_game.game_date
-        %td= tennis_game.first_player_identifier
-        %td= tennis_game.second_player_identifier
+        %td= tennis_game.first_player.name
+        %td= tennis_game.second_player.name
         %td= tennis_game.result
