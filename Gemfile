@@ -25,6 +25,7 @@ gem 'jbuilder', '~> 2.7'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 gem 'haml-rails'
+gem 'erb2haml'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
@@ -34,7 +35,11 @@ gem 'bootsnap', '>= 1.4.2', require: false
   # gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 # end
 
+gem 'sorcery'
+
 group :development do
+  gem 'better_errors'
+  gem 'binding_of_caller'
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '>= 3.0.5', '< 3.2'
