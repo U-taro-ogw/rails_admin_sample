@@ -8,4 +8,7 @@
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
   %body
+    = link_to 'Logout', logout_path, method: :delete
     = yield
+    .field
+      = link_to 'dashboard', root_path, method: :get
