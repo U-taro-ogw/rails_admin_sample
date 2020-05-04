@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "administrators/index", type: :view do
+RSpec.describe "admin/administrators/index", type: :view do
   before(:each) do
     assign(:administrators, [
       Administrator.create!(
@@ -16,7 +16,7 @@ RSpec.describe "administrators/index", type: :view do
     ])
   end
 
-  it "renders a list of administrators" do
+  it "renders a list of admin/administrators" do
     render
     assert_select "tr>td", text: "Email".to_s, count: 2
     assert_select "tr>td", text: "Crypted Password".to_s, count: 2

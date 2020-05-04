@@ -1,5 +1,5 @@
 FactoryBot.define do
-  factory :administrator do
+  factory :administrator, class: 'Administrator' do
     email { "MyString" }
     crypted_password { "MyString" }
     salt { "MyString" }

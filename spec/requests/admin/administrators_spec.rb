@@ -26,7 +26,7 @@ RSpec.describe "/administrators", type: :request do
   describe "GET /index" do
     it "renders a successful response" do
       Administrator.create! valid_attributes
-      get administrators_url
+      get admin_administrators_url
       expect(response).to be_successful
     end
   end
@@ -34,14 +34,14 @@ RSpec.describe "/administrators", type: :request do
   describe "GET /show" do
     it "renders a successful response" do
       administrator = Administrator.create! valid_attributes
-      get administrator_url(administrator)
+      get admin_administrator_url(administrator)
       expect(response).to be_successful
     end
   end
 
   describe "GET /new" do
     it "renders a successful response" do
-      get new_administrator_url
+      get new_admin_administrator_url
       expect(response).to be_successful
     end
   end
@@ -49,7 +49,7 @@ RSpec.describe "/administrators", type: :request do
   describe "GET /edit" do
     it "render a successful response" do
       administrator = Administrator.create! valid_attributes
-      get edit_administrator_url(administrator)
+      get edit_admin_administrator_url(administrator)
       expect(response).to be_successful
     end
   end
@@ -58,25 +58,25 @@ RSpec.describe "/administrators", type: :request do
     context "with valid parameters" do
       it "creates a new Administrator" do
         expect {
-          post administrators_url, params: { administrator: valid_attributes }
+          post admin_administrators_url, params: { admin_administrator: valid_attributes }
         }.to change(Administrator, :count).by(1)
       end
 
-      it "redirects to the created administrator" do
-        post administrators_url, params: { administrator: valid_attributes }
-        expect(response).to redirect_to(administrator_url(Administrator.last))
+      it "redirects to the created admin_administrator" do
+        post admin_administrators_url, params: { admin_administrator: valid_attributes }
+        expect(response).to redirect_to(admin_administrator_url(Administrator.last))
       end
     end
 
     context "with invalid parameters" do
       it "does not create a new Administrator" do
         expect {
-          post administrators_url, params: { administrator: invalid_attributes }
+          post admin_administrators_url, params: { admin_administrator: invalid_attributes }
         }.to change(Administrator, :count).by(0)
       end
 
       it "renders a successful response (i.e. to display the 'new' template)" do
-        post administrators_url, params: { administrator: invalid_attributes }
+        post admin_administrators_url, params: { admin_administrator: invalid_attributes }
         expect(response).to be_successful
       end
     end
@@ -88,16 +88,16 @@ RSpec.describe "/administrators", type: :request do
         skip("Add a hash of attributes valid for your model")
       }
 
-      it "updates the requested administrator" do
+      it "updates the requested admin_administrator" do
         administrator = Administrator.create! valid_attributes
-        patch administrator_url(administrator), params: { administrator: new_attributes }
+        patch admin_administrator_url(administrator), params: { administrator: new_attributes }
         administrator.reload
         skip("Add assertions for updated state")
       end
 
-      it "redirects to the administrator" do
+      it "redirects to the admin_administrator" do
         administrator = Administrator.create! valid_attributes
-        patch administrator_url(administrator), params: { administrator: new_attributes }
+        patch admin_administrator_url(administrator), params: { administrator: new_attributes }
         administrator.reload
         expect(response).to redirect_to(administrator_url(administrator))
       end
@@ -106,24 +106,24 @@ RSpec.describe "/administrators", type: :request do
     context "with invalid parameters" do
       it "renders a successful response (i.e. to display the 'edit' template)" do
         administrator = Administrator.create! valid_attributes
-        patch administrator_url(administrator), params: { administrator: invalid_attributes }
+        patch admin_administrator_url(administrator), params: { administrator: invalid_attributes }
         expect(response).to be_successful
       end
     end
   end
 
   describe "DELETE /destroy" do
-    it "destroys the requested administrator" do
+    it "destroys the requested admin_administrator" do
       administrator = Administrator.create! valid_attributes
       expect {
-        delete administrator_url(administrator)
+        delete admin_administrator_url(administrator)
       }.to change(Administrator, :count).by(-1)
     end
 
     it "redirects to the administrators list" do
       administrator = Administrator.create! valid_attributes
-      delete administrator_url(administrator)
-      expect(response).to redirect_to(administrators_url)
+      delete admin_administrator_url(administrator)
+      expect(response).to redirect_to(admin_administrators_url)
     end
   end
 end

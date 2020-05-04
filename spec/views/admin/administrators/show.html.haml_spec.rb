@@ -1,8 +1,8 @@
 require 'rails_helper'
 
-RSpec.describe "administrators/show", type: :view do
+RSpec.describe "admin/administrators/show", type: :view do
   before(:each) do
-    @administrator = assign(:administrator, Administrator.create!(
+    @admin_administrator = assign(:admin_administrator, Administrator.create!(
       email: "Email",
       crypted_password: "Crypted Password",
       salt: "Salt"
