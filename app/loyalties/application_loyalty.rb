@@ -39,4 +39,16 @@ class ApplicationLoyalty
     def role_A?
       admin.role_A?
     end
+
+    def role_B?
+      admin.role_B?
+    end
+
+    def role_C?
+      admin.role_C?
+    end
+
+    def all_role
+      admin.role_A? || admin.role_B? || admin.role_C?
+    end
 end

@@ -13,7 +13,7 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resources :dashboards, only: %i[index]
-    resources :administrators
+    resources :administrators, expect: %i[show destroy]
     resources :tennis_games
   end
 end
