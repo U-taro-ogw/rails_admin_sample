@@ -35,7 +35,9 @@ gem 'bootsnap', '>= 1.4.2', require: false
   # gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 # end
 
+
 gem 'sorcery'
+gem 'banken'
 
 group :development do
   gem 'better_errors'

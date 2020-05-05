@@ -5,6 +5,7 @@ module Admin
     # GET /administrators
     # GET /administrators.json
     def index
+      authorize!
       @administrators = Administrator.all
     end
 
