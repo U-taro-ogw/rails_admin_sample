@@ -48,3 +48,7 @@ TennisGameScore.create!(
   second_set_first_player: 7,
   second_set_second_player: 5
 )
+
+Administrator.create(email: 'hoge@example.com', password: 'hoge', password_confirmation: 'hoge', role: 0)
+Administrator.create(email: 'fuga@example.com', password: 'fuga', password_confirmation: 'fuga', role: 1)
+Administrator.create(email: 'piyo@example.com', password: 'piyo', password_confirmation: 'piyo', role: 2)

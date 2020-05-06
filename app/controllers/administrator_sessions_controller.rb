@@ -6,15 +6,8 @@ class AdministratorSessionsController < ApplicationController
   def create
     @administrator = login(params[:email], params[:password])
     if @administrator
-      puts "=================="
-      puts "=================="
-      puts "=================="
-      # redirect_back_or_to(root_path, notice: 'login successful!!!')
       redirect_to(root_path, notice: 'login successful!!!')
     else
-      puts "#####################"
-      puts "#####################"
-      puts "#####################"
       flash.now[:alert] = 'login failed'
       render action: 'new'
     end

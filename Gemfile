@@ -35,7 +35,9 @@ gem 'bootsnap', '>= 1.4.2', require: false
   # gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 # end
 
+
 gem 'sorcery'
+gem 'banken'
 
 group :development do
   gem 'better_errors'
@@ -50,7 +52,7 @@ end
 
 group :test do
   # Adds support for Capybara system testing and selenium driver
-  gem 'capybara', '>= 2.15'
+  gem 'capybara'
   gem 'selenium-webdriver'
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'webdrivers'

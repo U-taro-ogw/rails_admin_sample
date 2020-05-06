@@ -8,6 +8,9 @@
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
   %body
+    - if current_user
+      = "アカウント ： #{current_user.email} , ロール ： #{current_user.role}"
+    %br
     = link_to 'dashboard', root_path, method: :get
     = link_to 'Logout', logout_path, method: :delete
     = yield

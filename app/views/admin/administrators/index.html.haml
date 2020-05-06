@@ -4,6 +4,7 @@
   %thead
     %tr
       %th Email
+      %th Role
       %th
       -#%th
 
@@ -11,6 +12,7 @@
     - @administrators.each do |administrator|
       %tr
         %td= administrator.email
+        %td= administrator.role
         %td= link_to 'Edit', edit_admin_administrator_path(administrator)
         -#%td= link_to 'Destroy', administrator, method: :delete, data: { confirm: 'Are you sure?' }
 

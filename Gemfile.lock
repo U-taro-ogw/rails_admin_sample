@@ -59,6 +59,8 @@ GEM
     addressable (2.7.0)
       public_suffix (>= 2.0.2, < 5.0)
     ast (2.4.0)
+    banken (1.0.3)
+      activesupport (>= 3.0.0)
     bcrypt (3.1.13)
     better_errors (2.7.0)
       coderay (>= 1.0.0)
@@ -297,10 +299,11 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  banken
   better_errors
   binding_of_caller
   bootsnap (>= 1.4.2)
-  capybara (>= 2.15)
+  capybara
   database_cleaner
   erb2haml
   factory_bot_rails
