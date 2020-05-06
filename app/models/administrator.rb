@@ -1,5 +1,6 @@
 class Administrator < ApplicationRecord
   authenticates_with_sorcery!
+  has_paper_trail
 
   # Role
   # role_A => なんでもできる
