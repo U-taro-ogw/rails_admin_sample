@@ -4,6 +4,7 @@
 %table{ border: '1' }
   %thead
     %tr
+      %td id
       %td item type
       %td item id
       %td event
@@ -13,9 +14,10 @@
   %tbody
     - @versions.each do |version|
       %tr
+        %td= version[:id]
         %td= version[:item_type]
         %td= version[:item_id]
         %td= version[:event]
-        %td= version[:whodunnit]
+        %td= version[:email]
         %td= version[:object]
         %td= version[:created_at]
