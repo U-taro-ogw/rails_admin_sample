@@ -303,7 +303,7 @@ DEPENDENCIES
   better_errors
   binding_of_caller
   bootsnap (>= 1.4.2)
-  capybara (>= 2.15)
+  capybara
   database_cleaner
   erb2haml
   factory_bot_rails
