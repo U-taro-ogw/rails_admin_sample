@@ -15,5 +15,8 @@
   .field
     = f.label :password_confirmation
     = f.password_field :password_confirmation
+  .field
+    = f.label :role
+    = f.select :role, options_for_select(Administrator.roles.keys)
   .actions
     = f.submit 'Save'

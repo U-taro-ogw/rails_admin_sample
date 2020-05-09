@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   delete 'logout' => 'administrator_sessions#destroy'
 
   namespace :admin do
+    get 'versions' => 'versions#index'
     resources :dashboards, only: %i[index]
     resources :administrators, expect: %i[show destroy]
     resources :tennis_games

@@ -1,5 +1,9 @@
 class Administrator < ApplicationRecord
   authenticates_with_sorcery!
+  has_paper_trail
+
+
+  # has_many :versions, foreign_key: 'whodunnit', class_name: 'Version', dependent: :restrict_with_error, inverse_of: :email
 
   # Role
   # role_A => なんでもできる

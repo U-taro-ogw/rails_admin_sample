@@ -1,0 +1,23 @@
+%h1 Admin::Versions#index
+%p Find me in app/views/admin/versions/index.html.haml
+
+%table{ border: '1' }
+  %thead
+    %tr
+      %td id
+      %td item type
+      %td item id
+      %td event
+      %td whodunnit
+      %td object
+      %td created_at
+  %tbody
+    - @versions.each do |version|
+      %tr
+        %td= version[:id]
+        %td= version[:item_type]
+        %td= version[:item_id]
+        %td= version[:event]
+        %td= version[:whodunnit]
+        %td= version[:object]
+        %td= version[:created_at]

@@ -1,5 +1,6 @@
 module Admin
   class AdministratorsController < AdminController
+    before_action :set_paper_trail_whodunnit
     before_action :set_administrator, only: [:show, :edit, :update, :destroy]
 
     # GET /administrators
@@ -34,7 +35,7 @@ module Admin
     def update
       respond_to do |format|
         if @administrator.update(administrator_params)
-          format.html { redirect_to @administrator, notice: 'Administrator was successfully updated.' }
+          format.html { redirect_to admin_administrators_path, notice: 'Administrator was successfully updated.' }
         else
           format.html { render :edit }
         end
@@ -49,7 +50,7 @@ module Admin
 
       # Only allow a list of trusted parameters through.
       def administrator_params
-        params.require(:administrator).permit(:email, :password, :password_confirmation)
+        params.require(:administrator).permit(:email, :password, :password_confirmation, :role)
       end
   end
 end

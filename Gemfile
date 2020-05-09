@@ -38,6 +38,7 @@ gem 'bootsnap', '>= 1.4.2', require: false
 
 gem 'sorcery'
 gem 'banken'
+gem 'paper_trail'
 
 group :development do
   gem 'better_errors'

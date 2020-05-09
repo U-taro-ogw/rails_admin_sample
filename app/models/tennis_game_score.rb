@@ -1,4 +1,6 @@
 class TennisGameScore < ApplicationRecord
+  has_paper_trail
+
   belongs_to :tennis_game
 
   def to_attributes
