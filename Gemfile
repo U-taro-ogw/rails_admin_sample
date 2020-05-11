@@ -35,7 +35,7 @@ gem 'bootsnap', '>= 1.4.2', require: false
   # gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 # end
 
-
+gem 'devise'
 gem 'paper_trail'
 
 group :development do
