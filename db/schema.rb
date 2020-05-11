@@ -12,16 +12,6 @@
 
 ActiveRecord::Schema.define(version: 2020_05_06_144243) do
 
-  create_table "administrators", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
-    t.string "email", null: false
-    t.string "crypted_password"
-    t.string "salt"
-    t.integer "role", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["email"], name: "index_administrators_on_email", unique: true
-  end
-
   create_table "tennis_game_scores", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.bigint "tennis_game_id"
     t.integer "first_set_first_player"

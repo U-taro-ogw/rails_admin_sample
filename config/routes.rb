@@ -7,14 +7,14 @@ Rails.application.routes.draw do
 
   root 'admin/dashboards#index'
 
-  get 'login' => 'administrator_sessions#new'
-  post 'login' => 'administrator_sessions#create'
-  delete 'logout' => 'administrator_sessions#destroy'
+  # get 'login' => 'administrator_sessions#new'
+  # post 'login' => 'administrator_sessions#create'
+  # delete 'logout' => 'administrator_sessions#destroy'
 
   namespace :admin do
     get 'versions' => 'versions#index'
     resources :dashboards, only: %i[index]
-    resources :administrators, expect: %i[show destroy]
+    # resources :administrators, expect: %i[show destroy]
     resources :tennis_games
   end
 end

@@ -36,8 +36,6 @@ gem 'bootsnap', '>= 1.4.2', require: false
 # end
 
 
-gem 'sorcery'
-gem 'banken'
 gem 'paper_trail'
 
 group :development do

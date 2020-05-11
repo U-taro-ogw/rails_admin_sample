@@ -1,5 +1,5 @@
 module Admin
-  class DashboardsController < AdminController
+  class DashboardsController < ApplicationController
     def index
     end
   end

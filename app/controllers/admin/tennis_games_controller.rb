@@ -1,5 +1,5 @@
 module Admin
-  class TennisGamesController < AdminController
+  class TennisGamesController < ApplicationController
     def index
       @tennis_games = TennisGame.all
     end
